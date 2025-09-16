@@ -1,6 +1,6 @@
 # KEYCLOAK-PASSWORD-CHECKER-SPI
 
-*All-in-One Spring Boot Library for message broker*
+*Keycloak 20+ user credential checker plugin*
 
 ![Last Commit](https://img.shields.io/github/last-commit/pingmyheart/Keycloak-Password-Checker-SPI)
 ![Repo Size](https://img.shields.io/github/repo-size/pingmyheart/Keycloak-Password-Checker-SPI)
