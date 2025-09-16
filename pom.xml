@@ -8,6 +8,34 @@
     <artifactId>keycloak-password-checker-spi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <scm>
+        <url>https://github.com/pingmyheart/Keycloak-Password-Checker-SPI</url>
+        <connection>git://github.com/pingmyheart/Keycloak-Password-Checker-SPI.git</connection>
+        <developerConnection>git@github.com:pingmyheart/Keycloak-Password-Checker-SPI.git</developerConnection>
+    </scm>
+    <issueManagement>
+        <system>Github Issues</system>
+        <url>https://github.com/pingmyheart/Keycloak-Password-Checker-SPI/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Github Actions</system>
+        <url>https://github.com/pingmyheart/Keycloak-Password-Checker-SPI/actions</url>
+    </ciManagement>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/pingmyheart/Keycloak-Password-Checker-SPI</url>
+        </repository>
+    </distributionManagement>
+    <licenses>
+        <license>
+            <name>MIT license</name>
+            <url>https://opensource.org/license/mit</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
