@@ -24,9 +24,12 @@ public class CredentialCheckerService {
                             .build())
                     .build();
         }
-        return Response.status(Response.Status.OK)
+        boolean valid = user.credentialManager().isValid(request.toCredentialInput());
+        return Response.status(valid ?
+                        Response.Status.OK :
+                        Response.Status.UNAUTHORIZED)
                 .entity(CredentialsResponse.builder()
-                        .valid(user.credentialManager().isValid(request.toCredentialInput()))
+                        .valid(valid)
                         .build())
                 .build();
     }
