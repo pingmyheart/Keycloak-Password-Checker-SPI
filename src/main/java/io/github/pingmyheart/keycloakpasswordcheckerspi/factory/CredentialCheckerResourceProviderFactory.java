@@ -19,8 +19,6 @@ public class CredentialCheckerResourceProviderFactory implements RealmResourcePr
 
     @Override
     public void init(Config.Scope config) {
-
-
     }
 
     @Override
@@ -29,7 +27,6 @@ public class CredentialCheckerResourceProviderFactory implements RealmResourcePr
 
     @Override
     public void close() {
-
     }
 
     @Override

@@ -42,5 +42,4 @@ public class CredentialCheckerService {
                         .build())
                 .build();
     }
-
 }
