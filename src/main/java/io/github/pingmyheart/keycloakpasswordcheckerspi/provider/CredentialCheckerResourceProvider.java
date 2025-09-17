@@ -2,14 +2,13 @@ package io.github.pingmyheart.keycloakpasswordcheckerspi.provider;
 
 import io.github.pingmyheart.keycloakpasswordcheckerspi.dto.CredentialsRequest;
 import io.github.pingmyheart.keycloakpasswordcheckerspi.service.CredentialCheckerService;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import org.keycloak.services.resource.RealmResourceProvider;
-
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 @Path("/check")
 public class CredentialCheckerResourceProvider implements RealmResourceProvider {
