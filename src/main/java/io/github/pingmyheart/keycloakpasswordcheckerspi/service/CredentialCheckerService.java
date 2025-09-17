@@ -5,10 +5,16 @@ import io.github.pingmyheart.keycloakpasswordcheckerspi.dto.CredentialsResponse;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.UserModel;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import static java.util.Objects.isNull;
 
+@Path("/check")
 public class CredentialCheckerService {
     private final KeycloakSession session;
 
@@ -16,6 +22,9 @@ public class CredentialCheckerService {
         this.session = session;
     }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response checkCredentials(CredentialsRequest request) {
         UserModel user = session.users().getUserByUsername(session.getContext().getRealm(), request.getUsername());
         if (isNull(user)) {
@@ -34,4 +43,5 @@ public class CredentialCheckerService {
                         .build())
                 .build();
     }
+
 }
