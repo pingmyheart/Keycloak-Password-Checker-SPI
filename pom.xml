@@ -6,7 +6,7 @@
 
     <groupId>io.github.pingmyheart</groupId>
     <artifactId>keycloak-password-checker-spi</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
 
     <scm>
         <url>https://github.com/pingmyheart/Keycloak-Password-Checker-SPI</url>
