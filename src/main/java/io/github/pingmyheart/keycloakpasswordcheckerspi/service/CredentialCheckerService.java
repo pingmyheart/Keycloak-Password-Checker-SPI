@@ -8,18 +8,18 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.UserModel;
 
 import static java.util.Objects.isNull;
 
 @Path("/check")
+@NoArgsConstructor(force = true)
+@RequiredArgsConstructor
 public class CredentialCheckerService {
     private final KeycloakSession session;
-
-    public CredentialCheckerService(KeycloakSession session) {
-        this.session = session;
-    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
