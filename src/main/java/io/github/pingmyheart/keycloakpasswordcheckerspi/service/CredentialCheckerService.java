@@ -2,9 +2,10 @@ package io.github.pingmyheart.keycloakpasswordcheckerspi.service;
 
 import io.github.pingmyheart.keycloakpasswordcheckerspi.dto.CredentialsRequest;
 import io.github.pingmyheart.keycloakpasswordcheckerspi.dto.CredentialsResponse;
-import jakarta.ws.rs.core.Response;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.UserModel;
+
+import javax.ws.rs.core.Response;
 
 import static java.util.Objects.isNull;
 
