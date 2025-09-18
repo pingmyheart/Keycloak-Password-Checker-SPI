@@ -1,6 +1,6 @@
 # KEYCLOAK-PASSWORD-CHECKER-SPI
 
-*Keycloak 20+ user credential checker plugin*
+*Keycloak 20.0.1 user credential checker plugin*
 
 ![Last Commit](https://img.shields.io/github/last-commit/pingmyheart/Keycloak-Password-Checker-SPI)
 ![Repo Size](https://img.shields.io/github/repo-size/pingmyheart/Keycloak-Password-Checker-SPI)
