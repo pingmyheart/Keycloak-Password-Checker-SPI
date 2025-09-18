@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import static java.util.Objects.isNull;
+import static java.util.Objects.nonNull;
 
 @NoArgsConstructor(force = true)
 @RequiredArgsConstructor
@@ -26,7 +27,7 @@ public class CredentialCheckerService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response checkCredentials(CredentialsRequest request) {
-        UserModel user = session.users().getUserByUsername(session.getContext().getRealm(), request.getUsername());
+        UserModel user = this.getUser(request.getUsername());
         if (isNull(user)) {
             return Response.status(Response.Status.UNAUTHORIZED)
                     .entity(CredentialsResponse.builder()
@@ -42,5 +43,23 @@ public class CredentialCheckerService {
                         .valid(valid)
                         .build())
                 .build();
+    }
+
+    private UserModel getUser(String username) {
+        assert session != null;
+        UserModel userModel = session.users().getUserByUsername(session.getContext().getRealm(), username);
+        if (nonNull(userModel)) {
+            return userModel;
+        }
+        userModel = session.users().getUserByEmail(session.getContext().getRealm(), username);
+        if (nonNull(userModel)) {
+            return userModel;
+        }
+        userModel = session.users().getUserById(session.getContext().getRealm(), username);
+        if (nonNull(userModel)) {
+            return userModel;
+        } else {
+            return null;
+        }
     }
 }
